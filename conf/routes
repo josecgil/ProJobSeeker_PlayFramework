@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default route
+GET     /                               controllers.DefaultController.index
+
+#Jobs
+GET     /jobs                           controllers.JobsController.index(categoryName = null)
+GET     /jobs/category/:categoryName    controllers.JobsController.index(categoryName: String)
+GET     /jobs/create                    controllers.JobsController.create
+GET     /jobs/:id                       controllers.JobsController.detail(id: Int)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+    
